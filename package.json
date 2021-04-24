@@ -32,6 +32,7 @@
     "deps:update": "npm-check-updates --dep prod,dev,optional -u"
   },
   "devDependencies": {
+    "@types/react-dom": "^17.0.3",
     "@types/react": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@topsoft4u/eslint-config": "^1.0.25",
