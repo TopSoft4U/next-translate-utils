@@ -1,7 +1,7 @@
 {
   "name": "@topsoft4u/next-translate-utils",
   "description": "Utilities for next-translate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/TopSoft4U/next-translate-utils",
@@ -32,17 +32,17 @@
     "deps:update": "npm-check-updates --dep prod,dev,optional -u"
   },
   "devDependencies": {
-    "@types/react-dom": "^17.0.3",
-    "@types/react": "^17.0.3",
-    "@types/react-router-dom": "^5.1.7",
     "@topsoft4u/eslint-config": "^1.0.25",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
     "eslint": "^7.25.0",
-    "typescript": "^4.2.4",
+    "next": "^10.1.3",
+    "next-translate": "^1.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "next": "^10.1.3",
-    "next-translate": "^1.0.6"
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
     "next": ">=10.x",
