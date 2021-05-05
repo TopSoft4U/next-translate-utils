@@ -2,8 +2,12 @@
   "name": "@topsoft4u/next-translate-utils",
   "description": "Utilities for next-translate",
   "version": "1.0.2",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": "https://github.com/TopSoft4U/next-translate-utils",
   "homepage": "https://github.com/TopSoft4U/next-translate-utils",
   "bugs": {
@@ -12,11 +16,9 @@
   "license": "MIT",
   "keywords": [
     "TopSoft4U",
-    "OpenAPI"
-  ],
-  "files": [
-    "dist",
-    "src"
+    "next.js",
+    "next-translate",
+    "Utils"
   ],
   "author": {
     "name": "Łukasz Kolasa",
@@ -31,22 +33,27 @@
     }
   ],
   "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "yarn generate_indexes && yarn eslint && yarn typecheck",
+    "generate_indexes": "barrelsby --delete --directory ./src",
     "eslint": "eslint --ext js,jsx,ts,tsx src --fix",
-    "deps:check": "npm-check-updates --dep prod,dev,optional",
-    "deps:update": "npm-check-updates --dep prod,dev,optional -u"
+    "typecheck": "tsc -p ./ --noEmit",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "clean": "rimraf --no-glob ./dist",
+    "deps:check": "npx npm-check-updates --dep prod,dev,optional",
+    "deps:update": "npx npm-check-updates --dep prod,dev,optional -u"
   },
   "devDependencies": {
     "@topsoft4u/eslint-config": "^1.0.25",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
-    "@types/react-router-dom": "^5.1.7",
     "eslint": "^7.25.0",
     "next": "^10.1.3",
     "next-translate": "^1.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "husky": "^6.0.0"
   },
   "peerDependencies": {
     "next": ">=10.x",
